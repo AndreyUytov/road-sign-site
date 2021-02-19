@@ -1,0 +1,43 @@
+.sizing {
+  width: 100%;
+  margin-bottom: 58px;
+
+  background: url('./img/sizing-fon.jpg');
+  background-size: auto 100%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.sizing-wrapper {
+  width: 100%;
+  min-height: 345px;
+  background-color: rgba(43, 40, 49, 0.6);
+}
+
+.sizing__content-wrapper {
+  padding-top: 58px;
+  color: #fff;
+}
+
+.sizing__title {
+  position: relative;
+  margin-bottom: 24px;
+  z-index: 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    width: 56px;
+    height: 16px;
+
+    background-color: var(--akcentColor);
+    z-index: -1;
+  }
+}
+
+.sizing__desc {
+  margin-bottom: 24px;
+}
