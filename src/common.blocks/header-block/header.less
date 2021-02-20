@@ -45,36 +45,23 @@
   width: 24px;
   height: 16px;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  cursor: pointer;
-
-  &:active {
-    transform: translateY(1px);
+  &--show .menu-toggle-svg--burger {
+    width: 0;
+    height: 0;
+  }
+  &--show .menu-toggle-svg--close {
+    transform: translateY(0);
   }
 }
 
-.page-header__menu-toggle-svg {
+.menu-toggle-svg {
   width: 24px;
   height: 16px;
   transition: all 0.5s;
   overflow: hidden;
 }
 
-.input-toogle:checked + .page-header__menu-toggle {
-  & .page-header__menu-toggle-svg--burger {
-    width: 0;
-    height: 0;
-  }
-
-  & .page-header__menu-toggle-svg--close {
-    transform: translateY(0);
-  }
-}
-
-.page-header__menu-toggle-svg--close {
+.menu-toggle-svg--close {
   position: absolute;
   transform: translateY(-300px);
 }
