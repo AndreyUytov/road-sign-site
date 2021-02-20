@@ -23,7 +23,7 @@
             </button>
 
             <button
-              class="page-header__menu-toggle page-header__menu-toggle--show snap"
+              class="page-header__menu-toggle snap"
             >
               <span class="visually-hidden">Показать/скрыть меню</span>
               <svg class="menu-toggle-svg menu-toggle-svg--burger">
@@ -34,88 +34,82 @@
               </svg>
             </button>
 
-            <div class="menu-wrapper hide">
+            <div class="menu-wrapper">
               <nav class="page-header__nav">
-                <ul class="page-header__nav-list list">
-                  <li
-                    class="page-header__nav-item page-header__nav-item--submenu"
-                  >
-                    <input
-                      id="dropdown"
-                      type="checkbox"
-                      class="dropdown-input visually-hidden"
-                    />
-                    <label
-                      for="dropdown"
-                      class="page-header__nav-link dropdown"
-                    >
-                      Каталог
-                      <svg class="dropdown-icon">
-                        <use href="#shape" />
-                      </svg>
-                    </label>
-                    <ul class="dropdown-list list">
-                      <li class="dropdown-list__item">
-                        <a href="#" class="dropdown-list__link"
-                          >Стандартные дорожные знаки</a
-                        >
-                      </li>
-                      <li class="dropdown-list__item">
-                        <a href="#" class="dropdown-list__link"
-                          >Светодиодные дорожные знаки</a
-                        >
-                      </li>
-                      <li class="dropdown-list__item">
-                        <a href="#" class="dropdown-list__link"
-                          >Заградительные светодиодные знаки</a
-                        >
-                      </li>
-                      <li class="dropdown-list__item">
-                        <a href="#" class="dropdown-list__link"
-                          >Временные дорожные знаки
-                        </a>
-                      </li>
-                      <li class="dropdown-list__item">
-                        <a href="#" class="dropdown-list__link"
-                          >Знаки пожарной безопасности</a
-                        >
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="page-header__nav-item">
-                    <a href="#" class="page-header__nav-link"> Прайс </a>
-                  </li>
-                  <li class="page-header__nav-item">
-                    <a href="#" class="page-header__nav-link"> Информация </a>
-                  </li>
-                  <li class="page-header__nav-item">
-                    <a href="#" class="page-header__nav-link"> Доставка </a>
-                  </li>
-                  <li class="page-header__nav-item">
-                    <a href="#" class="page-header__nav-link"> Контакты </a>
-                  </li>
-                </ul>
-              </nav>
-              <a href="#" class="page-header__link link">
-                <svg class="page-header__price-svg">
-                  <use href="#price" />
+              <ul class="page-header__nav-list list">
+                <li
+                  class="page-header__nav-item page-header__nav-item--submenu"
+                >
+                Каталог
+                <svg class="dropdown-icon">
+                  <use href="#shape" />
                 </svg>
-                Скачать прайс
+
+                  <ul class="dropdown-list list">
+                    <li class="dropdown-list__item">
+                      <a href="#" class="dropdown-list__link"
+                        >Стандартные дорожные знаки</a
+                      >
+                    </li>
+                    <li class="dropdown-list__item">
+                      <a href="#" class="dropdown-list__link"
+                        >Светодиодные дорожные знаки</a
+                      >
+                    </li>
+                    <li class="dropdown-list__item">
+                      <a href="#" class="dropdown-list__link"
+                        >Заградительные светодиодные знаки</a
+                      >
+                    </li>
+                    <li class="dropdown-list__item">
+                      <a href="#" class="dropdown-list__link"
+                        >Временные дорожные знаки
+                      </a>
+                    </li>
+                    <li class="dropdown-list__item">
+                      <a href="#" class="dropdown-list__link"
+                        >Знаки пожарной безопасности</a
+                      >
+                    </li>
+                  </ul>
+                  
+                </li>
+                <li class="page-header__nav-item">
+                  <a href="#" class="page-header__nav-link"> Прайс </a>
+                </li>
+                <li class="page-header__nav-item">
+                  <a href="#" class="page-header__nav-link"> Информация </a>
+                </li>
+                <li class="page-header__nav-item">
+                  <a href="#" class="page-header__nav-link"> Доставка </a>
+                </li>
+                <li class="page-header__nav-item">
+                  <a href="#" class="page-header__nav-link"> Контакты </a>
+                </li>
+              </ul>
+            </nav>
+            <a href="#" class="page-header__link link">
+              <svg class="page-header__price-svg">
+                <use href="#price" />
+              </svg>
+              Скачать прайс
+            </a>
+
+            <p class="page-header__phones title">
+              <a href="tel:88412710330">
+                <svg class="page-header__phone-svg">
+                  <use href="#phone" />
+                </svg>
+                8 (8412) 71-03-30 </a
+              >, <br />
+              <a href="tel:88412257004"
+                ><svg class="page-header__phone-svg">
+                  <use href="#phone" />
+                </svg>
+                8 (8412) 25-70-04
               </a>
-              <p class="page-header__phones title">
-                <a href="tel:88412710330">
-                  <svg class="page-header__phone-svg">
-                    <use href="#phone" />
-                  </svg>
-                  8 (8412) 71-03-30 </a
-                >, <br />
-                <a href="tel:88412257004"
-                  ><svg class="page-header__phone-svg">
-                    <use href="#phone" />
-                  </svg>
-                  8 (8412) 25-70-04
-                </a>
-              </p>
+            </p>
+
             </div>
           </div>
         </div>
@@ -138,7 +132,7 @@
       </div>
     </header>
 
-    <main>
+    <main class="page-main">
       <section class="catalog content">
         <ul class="catalog__list list">
           <li class="catalog__list-item">
