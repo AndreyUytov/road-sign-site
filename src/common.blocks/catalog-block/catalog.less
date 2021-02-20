@@ -12,11 +12,17 @@
 .catalog__list-item {
   position: relative;
   height: 208px;
+  width: 288px;
   margin-bottom: 64px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .catalog__list-link {
-  width: 288px;
+  width: 100%;
   height: 168px;
   padding: 32px 36px;
 
@@ -32,7 +38,7 @@
 
 .catalog__svg-wrapper {
   position: absolute;
-  top: -40px;
+  top: 0px;
   width: 104px;
   height: 104px;
 
@@ -51,5 +57,34 @@
 
 .catalog__link-title {
   width: 216px;
-  align-items: center;
+
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@media (min-width: 1450px) {
+  .catalog {
+    margin-bottom: 88px;
+  }
+
+  .catalog__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .catalog__list-item {
+    width: 264px;
+    margin-bottom: 15px;
+  }
+
+  .catalog__list-link {
+    padding: 32px 24px;
+    transition: all 0.5s;
+
+    &:hover {
+      background-color: var(--akcentColor);
+    }
+  }
 }

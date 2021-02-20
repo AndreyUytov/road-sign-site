@@ -7,6 +7,9 @@
 
   margin-bottom: 24px;
 
+  font-size: 16px;
+  line-height: 24px;
+
   &::before {
     content: '';
     position: absolute;
@@ -23,21 +26,33 @@
 
 .price__desc {
   margin-bottom: 24px;
+
+  font-size: 14px;
+  line-height: 20px;
+
+  color: inherit;
 }
 
 .price__table-wrapper {
   margin-bottom: 32px;
+  padding-bottom: 2px;
 
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 .price__table {
-  width: 1416px;
+  width: 1412px;
+  margin: 0 auto;
+  padding: 2px;
 
   border-collapse: collapse;
   text-align: center;
+
   & thead {
     height: 80px;
+
+    font-size: 16px;
+    line-height: 24px;
 
     color: #fff;
     background-color: var(--blackFonColor);
@@ -92,4 +107,54 @@
   width: 22px;
   height: 24px;
   margin-right: 10px;
+}
+
+@media (min-width: 1450px) {
+  .price {
+    margin-bottom: 144px;
+  }
+
+  .price__table-after {
+    position: relative;
+
+    &::after {
+      content: 'Наши цены';
+      position: absolute;
+      top: 0px;
+      right: 0;
+      width: auto;
+      height: 100px;
+
+      font-family: 'Montserrat-Bold';
+      font-size: 96px;
+      line-height: 100px;
+      color: #858585;
+
+      opacity: 0.1;
+      transform-origin: right top 0;
+      transform: rotate(90deg) translate(100%, -110px);
+    }
+  }
+
+  .price__title {
+    margin-bottom: 32px;
+
+    font-size: 32px;
+    line-height: 40px;
+    &::before {
+      top: 50%;
+      left: -1px;
+    }
+  }
+
+  .price__desc {
+    margin-bottom: 32px;
+
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .price__show-price-button {
+    margin-bottom: 32px;
+  }
 }

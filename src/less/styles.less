@@ -14,14 +14,6 @@
   font-style: normal;
 }
 
-:root {
-  --akcentColor: #ffb71b;
-  --akcentColorHover: #ffdc5e;
-  --blackFonColor: #2b2831;
-  --blackFonColorHover: #3a3a47;
-  --grayCartFonColor: #f3f3f3;
-}
-
 html {
   color: var(--akcentColor);
 
@@ -104,67 +96,50 @@ input[type='radio'].visually-hidden {
   overflow: hidden;
 }
 
-//
-.content {
-  width: 320px;
-  padding: 0 16px;
-  margin: 0 auto;
+// Переменные css
+
+:root {
+  --akcentColor: #ffb71b;
+  --akcentColorHover: #ffdc5e;
+  --blackFonColor: #2b2831;
+  --blackFonColorHover: #3a3a47;
+  --grayCartFonColor: #f3f3f3;
 }
 
+// миксины )) уже сверстал на своем сборщике
+// решил оставить добавивь миксины классами к html
+
 .h1-title {
-  margin: 0;
-  padding: 0;
-  font-family: 'Montserrat-Bold';
-  font-style: normal;
-  font-weight: bold;
   font-size: 48px;
   line-height: 56px;
-
-  color: inherit;
 }
 
 .h2-title {
-  margin: 0;
-  padding: 0;
-  font-family: 'Montserrat-Bold';
-  font-style: normal;
-  font-weight: bold;
   font-size: 32px;
   line-height: 40px;
-
-  color: inherit;
 }
 
 .h3-title {
-  margin: 0;
-  padding: 0;
-  font-family: 'Montserrat-Bold';
-  font-style: normal;
-  font-weight: bold;
   font-size: 24px;
   line-height: 32px;
-
-  color: inherit;
 }
 
 .h4-title {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.title {
   margin: 0;
   padding: 0;
   font-family: 'Montserrat-Bold';
   font-style: normal;
   font-weight: bold;
-  font-size: 16px;
-  line-height: 24px;
 
   color: inherit;
 }
 
 .p2 {
-  margin: 0;
-  padding: 0;
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 500;
   font-size: 14px;
   line-height: 20px;
 
@@ -172,28 +147,10 @@ input[type='radio'].visually-hidden {
 }
 
 .p3 {
-  margin: 0;
-  padding: 0;
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 500;
   font-size: 12px;
   line-height: 16px;
 
   color: inherit;
-}
-
-.before-highlighter {
-  content: '';
-  position: absolute;
-  top: 0px;
-  left: 0px;
-
-  width: 56px;
-  height: 16px;
-
-  background-color: var(--akcentColor);
-  z-index: -1;
 }
 
 .button {
@@ -217,6 +174,7 @@ input[type='radio'].visually-hidden {
 
   cursor: pointer;
   outline: none;
+  transition: all 0.5s;
 
   &:hover {
     background: var(--akcentColorHover);
@@ -268,4 +226,20 @@ input[type='radio'].visually-hidden {
   padding: 0;
 
   list-style: none;
+}
+
+// content
+
+.content {
+  width: 320px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1450px) {
+  .content {
+    width: 1450px;
+    padding: 0 16px;
+    margin: 0 auto;
+  }
 }

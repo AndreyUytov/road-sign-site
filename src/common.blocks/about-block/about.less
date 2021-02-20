@@ -6,6 +6,10 @@
 .about__title {
   margin-bottom: 24px;
   position: relative;
+
+  font-size: 16px;
+  line-height: 24px;
+
   &::before {
     content: '';
     position: absolute;
@@ -17,5 +21,40 @@
 
     background-color: var(--akcentColor);
     z-index: -1;
+  }
+}
+
+@media (min-width: 1450px) {
+  .about {
+    min-height: 522px;
+    padding: 88px 840px 88px 16px;
+    margin-bottom: 32px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    background: url('./img/about-pic.png');
+    background-repeat: no-repeat;
+    background-size: 816px 346px;
+    background-position: 100% 50%;
+  }
+
+  .about__title {
+    margin-bottom: 32px;
+
+    font-size: 32px;
+    line-height: 40px;
+
+    &::before {
+      top: 50%;
+      left: -1px;
+    }
+  }
+
+  .about__desc {
+    font-size: 16px;
+    line-height: 24px;
   }
 }

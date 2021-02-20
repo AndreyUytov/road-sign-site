@@ -6,6 +6,9 @@
   margin-bottom: 24px;
   position: relative;
 
+  font-size: 16px;
+  line-height: 24px;
+
   &::before {
     content: '';
     position: absolute;
@@ -22,4 +25,55 @@
 
 .skin__desc {
   margin-bottom: 24px;
+
+  font-size: 14px;
+  line-height: 20px;
+
+  color: inherit;
+}
+
+@media (min-width: 1450px) {
+  .skin {
+    position: relative;
+    width: 1176px;
+    min-height: 373px;
+    margin-bottom: 88px;
+    padding-left: 600px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 456px;
+      height: 373px;
+
+      background-image: url('./img/skin-pic.png');
+      background-repeat: no-repeat;
+      background-size: 456px 373px;
+    }
+  }
+
+  .skin__title {
+    margin-bottom: 32px;
+
+    font-size: 32px;
+    line-height: 40px;
+
+    &::before {
+      top: 50%;
+      left: -1px;
+    }
+  }
+
+  .skin__desc {
+    margin-bottom: 32px;
+
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
