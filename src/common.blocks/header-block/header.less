@@ -39,6 +39,10 @@
 .page-header__search-snap {
   margin-left: auto;
   margin-right: 24px;
+
+  &--desktop {
+    display: none;
+  }
 }
 
 .page-header__menu-toggle {
@@ -228,9 +232,12 @@ display: block;
   }
   
   .page-header__search-snap {
-    position: absolute;
-    margin-left: 0;
-    margin-right: 0;
+    display: none;
+
+    &--desktop {
+      display: flex;
+      margin-right: 40px;
+    }
   }
   
   .page-header__menu-toggle {
@@ -239,11 +246,13 @@ display: block;
   
   .menu-wrapper {
     position: static;
-    opacity: 1;
+    width: 1076px;
 
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+
+    opacity: 1;
   }
   
   .page-header__nav {
@@ -335,8 +344,7 @@ display: block;
   }
   
   .page-header__link {
-    // временно
-    margin-right: 104px;
+    margin-right: 40px;
     margin-bottom: 0px;
   }
 

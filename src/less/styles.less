@@ -8,9 +8,9 @@
 }
 
 @font-face {
-  font-family: 'Montserrat-Bold';
+  font-weight: bold;
+  font-family: 'Montserrat';
   src: url('./../assets/fonts/Montserrat-Bold.ttf') format('truetype');
-  font-weight: 700;
   font-style: normal;
 }
 
@@ -107,48 +107,29 @@ input[type='radio'].visually-hidden {
 // миксины )) уже сверстал на своем сборщике
 // решил оставить добавивь миксины классами к html
 
-.h1-title {
-  font-size: 48px;
-  line-height: 56px;
-}
+.custom-input,
+.custom-textarea {
+  width: 100%;
+  height: 40px;
+  padding: 8px 16px;
 
-.h2-title {
-  font-size: 32px;
-  line-height: 40px;
-}
-
-.h3-title {
-  font-size: 24px;
-  line-height: 32px;
-}
-
-.h4-title {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
   font-size: 16px;
   line-height: 24px;
-}
 
-.title {
-  margin: 0;
-  padding: 0;
-  font-family: 'Montserrat-Bold';
-  font-style: normal;
-  font-weight: bold;
+  border: 1px solid #858585;
+  border-radius: 20px;
 
-  color: inherit;
-}
+  outline: none;
 
-.p2 {
-  font-size: 14px;
-  line-height: 20px;
-
-  color: inherit;
-}
-
-.p3 {
-  font-size: 12px;
-  line-height: 16px;
-
-  color: inherit;
+  &:hover, &:focus {
+    border: 1px solid #FFB71B;
+  }
+  &:invalid {
+    border: 1px solid #EB4C47;
+  }
 }
 
 .button {
@@ -160,9 +141,10 @@ input[type='radio'].visually-hidden {
   justify-content: center;
   align-items: center;
 
-  font-family: 'Montserrat-Bold';
+  font-family: 'Montserrat';
   font-size: 12px;
   line-height: 24px;
+  font-weight: bold;
   color: var(--blackFonColor);
   text-transform: uppercase;
 
