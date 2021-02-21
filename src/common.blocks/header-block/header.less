@@ -265,14 +265,22 @@ display: block;
 
     width: auto;
     margin-bottom: 0px;
+    padding: 0 15px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      right: 50%;
+      left: 50%;
+      transition: all 0.4s ease-in-out;
+
+    }
 
     &:hover {
       &::before {
-        content: '';
-        position: absolute;
         height: 4px;
-        right: 0;
-        left: 0;
+        right: 15px;
+        left: 15px;
         bottom: -10px;
 
         background-color: var(--akcentColor);
@@ -285,101 +293,77 @@ display: block;
     & .dropdown-icon {
       transform: rotate(180deg);
     }
-  }
-  
-  .page-header__nav-link {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  
-    cursor: pointer;
-  }
-  
-  .dropdown-icon {
-    width: 12px;
-    height: 7px;
-  
-    margin-left: 8px;
-    transition: 0.3s;
-  }
-  
-  .submenu-show .dropdown-list {
-    display: block;
+
+    & .dropdown-list {
+      top: 0px;
+      left: 0px;
+      
+      transform: scale(1);
+    }
   }
   
   .dropdown-list {
     position: absolute;
-    display: none;
-    padding-left: 16px;
-    margin-top: 16px;
+
+    width: 392px;
+    padding-top: 40px;
+
+    display: block;
+    transform: scale(0);
+
+    background-color: var(--blackFonColor);
+    background-clip: content-box;
+
+    transform-origin: 0 0;
+    transition: 0.4s ease-in-out;
   }
   
   .dropdown-list__item {
-    margin-bottom: 16px;
+    height: 40px;
+    width: 100%;
+    padding: 8px 16px;
+    margin-bottom: 0;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &:hover {
+      background-color: var(--blackFonColorHover);
+      color: var(--akcentColor);
+    }
   }
   
   .page-header__link {
     // временно
     margin-right: 104px;
     margin-bottom: 0px;
-  
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
-  
-  .page-header__phones {
-    font-size: 16px;
-    line-height: 24px;
-  }
-  
-  .page-header__price-svg {
-    width: 22px;
-    height: 24px;
-    margin-right: 10px;
-  }
-  
-  .page-header__phone-svg {
-    width: 18px;
-    height: 18px;
-    margin-right: 8px;
-  }
+
   
   //  // // / // / / / / // / / //
   
   .page-header__title-block-wrapper {
+    height: 100%;
     padding-top: 24px;
-  }
-  
-  .page-header__title-block {
+
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
   }
   
   .page-header__title {
-    margin-bottom: 16px;
+    margin-bottom: 32px;
   
-    font-size: 24px;
-    line-height: 32px;
-    text-align: center;
-  }
-  
-  .akcent-text {
-    color: var(--akcentColor);
+    font-size: 48px;
+    line-height: 56px;
   }
   
   .page-header__desc {
-    margin-bottom: 32px;
+    margin-bottom: 48px;
   
-    font-size: 14px;
-    line-height: 20px;
-  
-    color: inherit;
-  
-    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
   }
   
 }
