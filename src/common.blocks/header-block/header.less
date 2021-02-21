@@ -23,6 +23,7 @@
 }
 
 .page-header__up-row {
+  position: relative;
   min-height: 56px;
 
   display: flex;
@@ -37,8 +38,11 @@
 }
 
 .page-header__search-snap {
-  margin-left: auto;
-  margin-right: 24px;
+  
+  &--mobile {
+    margin-left: auto;
+    margin-right: 24px;
+  }
 
   &--desktop {
     display: none;
@@ -232,8 +236,10 @@ display: block;
   }
   
   .page-header__search-snap {
-    display: none;
-
+    &--mobile {
+      display: none;
+    }
+    
     &--desktop {
       display: flex;
       margin-right: 40px;
