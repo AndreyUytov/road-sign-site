@@ -118,7 +118,7 @@ module.exports = {
           outputPath: 'img/',
         },
       },
-      'img-loader',
+      // 'img-loader',
       ],
 
     },

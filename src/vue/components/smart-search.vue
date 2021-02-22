@@ -8,20 +8,25 @@
         <use href="#search" />
       </svg>
     </button>
-    <div class="smart-search" v-show="isOpen">
+    <div v-if="isOpen" class="smart-search">
       <div class="label-and-result-wrapper">
         <label class="smart-search__label">
-        <input type="text" placeholder="Поиск" class="smart-search__input" v-model="inputValue" ref="input"/>
+        <input type="text" placeholder="Поиск" class="smart-search__input" v-model="inputValue" v-focus />
         <button class="smart-search__submit">
           <svg class="smart-search__submit-svg">
             <use href="#search" />
           </svg>
         </button>
       </label>
-      <ul class="smart-search__result-list">
+      <ul v-if="inputValue.trim()" class="smart-search__result-list">
           <li class="result-list__item">
             <a href="#" class="result-list__link">
               Дорожные знаки
+            </a>
+          </li>
+          <li v-for="item in items" :key="item" class="result-list__item">
+            <a href="#" class="result-list__link">
+              {{item}}
             </a>
           </li>
         </ul>
@@ -42,17 +47,80 @@ export default {
   data() {
     return {
       inputValue: '',
-      isOpen: false
+      isOpen: false,
+      items: []
     }
+  },
+  watch: {
+    inputValue() {
+      this.debounceGetItems()
+    }
+  },
+  created () {
+    this.debounceGetItems = this.debounce(this.getItems, 1000)
   },
   methods: {
     smartSearchToggle() {
       this.isOpen = !this.isOpen
       this.isOpen ? document.body.style.overflow = 'hidden' : document.body.style.overflow = ''
+    },
 
-      this.isOpen ? this.$refs.input.focus() : null
+    getItems () {
+      if(!this.inputValue.trim()) {
+        return
+      }
+      let xhr = new XMLHttpRequest()
+      let url = new URL('http://socpnz.onlinebees.ru/api/search')
+      url.searchParams.set('phrase', `${this.inputValue.trim()}`)
+      xhr.open('GET', url)
+      xhr.send()
+      console.log('request', this.inputValue.trim())
+      xhr.onload = function() {
+        if (xhr.status != 200) {
+          console.log(`${xhr.status}: ${xhr.statusText}`);
+        } else {
+          console.log(xhr.responseXML);
+        }
+      }
+    },
+
+    debounce(func, ms) {
+      let isCoolDown = false,
+      savedArgs,
+      savedThis;
+
+      function wrapper() {
+
+        if (isCoolDown) { 
+          savedArgs = arguments
+          savedThis = this
+          return
+        }
+
+        func.apply(this, arguments)
+
+        isCoolDown = true
+
+        setTimeout(function() {
+          isCoolDown = false
+          if (savedArgs) {
+            wrapper.apply(savedThis, savedArgs)
+            savedArgs = savedThis = null
+          }
+        }, ms)
+      }
+
+      return wrapper
+    }
+  },
+  
+  directives: {
+  focus: {
+    inserted: function (el) {
+      el.focus()
     }
   }
+}
 }
 </script>
 
@@ -124,7 +192,7 @@ export default {
   .smart-search__label {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 40px;
 
     display: flex;
   }
@@ -176,6 +244,7 @@ export default {
     top: 56px;
     left: 0px;
     width: 100%;
+    max-height: 256px;
     margin: 0;
     padding: 0;
     padding-top: 24px;
@@ -197,6 +266,12 @@ export default {
     &:hover {
       background: #3A3A47;
     }
+  }
+
+  .result-list__link {
+    width: 100%;
+
+    display: block;
   }
 
   .smart-search__close-snap {
@@ -241,9 +316,9 @@ export default {
     }
     .smart-search__result-list {
       position: absolute;
-      padding-top: 4px;
+      padding-top: 8px;
 
-      background-clip: content-box;
+      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
   }
 </style>
