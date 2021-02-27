@@ -5,10 +5,15 @@
 
 .advantagese__wrapper {
   padding: 56px 16px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .advantages__title {
   position: relative;
+  width: 100%;
   margin-bottom: 24px;
 
   font-size: 16px;
@@ -30,23 +35,25 @@
 }
 
 .advantages__list {
-  width: 100%;
+  margin-right: -16px;
+
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  align-items: stretch;
   justify-content: center;
 }
 
 .advantages__item {
   position: relative;
-  width: 100%;
+  width: 288px;
   padding: 24px 16px;
   padding-left: 80px;
   margin-bottom: 16px;
+  margin-right: 16px;
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 
   background: var(--grayCartFonColor);
 }
@@ -117,7 +124,8 @@
       width: auto;
       height: 100px;
 
-      font-family: 'Montserrat-Bold';
+      font-family: 'Montserrat';
+      font-weight: bold;
       font-size: 96px;
       line-height: 100px;
       color: #858585;
