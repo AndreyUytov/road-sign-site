@@ -124,11 +124,12 @@ input[type='radio'].visually-hidden {
 
   outline: none;
 
-  &:hover, &:focus {
-    border: 1px solid #FFB71B;
+  &:hover,
+  &:focus {
+    border: 1px solid #ffb71b;
   }
   &:invalid {
-    border: 1px solid #EB4C47;
+    border: 1px solid #eb4c47;
   }
 }
 
@@ -210,18 +211,20 @@ input[type='radio'].visually-hidden {
 
 // content
 .page-main {
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .content {
-  width: 320px;
+  min-width: 320px;
+  width: 100%;
   padding: 0 16px;
   margin: 0 auto;
 }
 
 @media (min-width: 1450px) {
   .content {
-    width: 1450px;
+    max-width: 1450px;
+    width: 100%;
     padding: 0 16px;
     margin: 0 auto;
   }
